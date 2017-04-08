@@ -1,0 +1,35 @@
+//: Playground - noun: a place where people can play
+
+func selectionSort<T: Comparable> (_list: inout [T])
+{
+    for i in 0..<_list.count
+    {
+        var minIndex = i
+        for j in i+1..<_list.count
+        {
+            if(_list[j]<_list[minIndex])
+            {
+                minIndex=j
+            }
+        }
+        var temp = _list[i]
+        _list[i] = _list[minIndex]
+        _list[minIndex] = temp
+    }
+    
+    
+}
+var number = [4,6,1,30,0,40,20,5]
+var word = ["Yara","Yahia","Yasmine","Fady","Abdelaziz","Ziyad"]
+
+selectionSort(_list: &number)
+selectionSort(_list: &word)
+
+for item in number
+{
+    print (item)
+}
+for item in word
+{
+    print (item)
+}
